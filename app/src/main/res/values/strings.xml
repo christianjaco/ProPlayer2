@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ProPlayer</string>
+    <string name="Agregar">Add</string>
+    <string name="buscar">Search</string>
+    <string name="Home">Home</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buzon">MailBox</string>
+    <string name="plantilla">Players</string>
+    <string name="liga">League</string>
+    <string name="fixture">Fixture</string>
+</resources>

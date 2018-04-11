@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#518c42</color>
+    <color name="colorAccent">#f7c154</color>
+    <color name="bottomNavIcon">#9b9a9a</color>
+    <color name="tabTextColor">#8c8c8c</color>
+    <color name="tabIndicator">#7ba770</color>
+    <color name="backgroundRecyclerMailbox">#e2e2e2</color>
+    <color name="tabIndicadtorColor">#f5cd84</color>
+</resources>
