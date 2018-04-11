@@ -54,6 +54,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
 
         public ViewHolder(View itemView) {
+
             super(itemView);
 
             titulo = (TextView)itemView.findViewById(R.id.news_title);
