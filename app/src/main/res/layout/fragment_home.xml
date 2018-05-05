@@ -45,9 +45,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
-                    android:text="Futbol Urbano"
+                    android:text="La Terraza"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="12sp" />
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
@@ -133,10 +133,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Premier League"
+                    android:text="Copa Oro"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="10sp"/>
+                    android:textSize="12sp"/>
             </LinearLayout>
             </LinearLayout>
 

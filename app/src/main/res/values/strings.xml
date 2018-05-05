@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ProPlayer</string>
-    <string name="Agregar">Add</string>
-    <string name="buscar">Search</string>
+    <string name="Agregar">Play</string>
+    <string name="buscar">Explore</string>
     <string name="Home">Home</string>
 
 <!-- TODO: Remove or change this placeholder text -->
@@ -9,5 +9,6 @@
     <string name="buzon">MailBox</string>
     <string name="plantilla">Players</string>
     <string name="liga">League</string>
-    <string name="fixture">Fixture</string>
+    <string name="fixture">Ultimos resultados
+    </string>
 </resources>

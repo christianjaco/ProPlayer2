@@ -1,4 +1,4 @@
-package com.cinnamon.proplayer;
+package com.cinnamon.proplayer.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.Toast;
+
+import com.cinnamon.proplayer.R;
 
 public class AddFragment extends Fragment {
 

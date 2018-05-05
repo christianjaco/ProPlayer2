@@ -1,4 +1,4 @@
-package com.cinnamon.proplayer;
+package com.cinnamon.proplayer.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.cinnamon.proplayer.R;
 
 public class SearchFragment extends Fragment {
 

@@ -1,4 +1,4 @@
-package com.cinnamon.proplayer;
+package com.cinnamon.proplayer.Adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

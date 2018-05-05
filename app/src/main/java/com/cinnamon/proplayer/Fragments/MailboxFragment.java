@@ -1,4 +1,4 @@
-package com.cinnamon.proplayer;
+package com.cinnamon.proplayer.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,8 +9,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.cinnamon.proplayer.Adapters.RecyclerAdapter;
+import com.cinnamon.proplayer.Objects.News;
+import com.cinnamon.proplayer.R;
+
 import java.util.ArrayList;
 import java.util.List;
+
+/*
+
+    xml: recycler_view
+    Se implementa el RecyclerAdapter (ViewHolder del RecyclerView)
+    Se hardcodean los Team que se crean en el BindNews del RecyclerAdapter
+
+     */
 
 public class MailboxFragment extends Fragment {
 

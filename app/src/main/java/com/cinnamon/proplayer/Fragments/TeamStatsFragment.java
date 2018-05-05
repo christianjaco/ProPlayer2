@@ -1,4 +1,4 @@
-package com.cinnamon.proplayer;
+package com.cinnamon.proplayer.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,8 +9,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.cinnamon.proplayer.Adapters.RecyclerAdapterTeamStats;
+import com.cinnamon.proplayer.Objects.Player;
+import com.cinnamon.proplayer.R;
+
 import java.util.ArrayList;
 import java.util.List;
+/*
+
+    xml: recycler_view_plantilla
+    Se implementa el RecyclerAdapterLeagueTeamStats (ViewHolder del RecyclerView)
+    Se hardcodean los Team que se crean en el BindPlayer del RecyclerAdapter
+
+     */
 
 public class TeamStatsFragment extends Fragment {
 

@@ -6,7 +6,13 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
+
+import com.cinnamon.proplayer.Fragments.AddFragment;
+import com.cinnamon.proplayer.Fragments.HomeFragment;
+import com.cinnamon.proplayer.Fragments.SearchFragment;
+/*
+xml: activity_main
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            // Creo los fragments y navego entre cada uno con switch
 
             Fragment selectedFragment = null;
             switch (item.getItemId()){
