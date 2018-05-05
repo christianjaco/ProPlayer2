@@ -1,6 +1,6 @@
 package com.cinnamon.proplayer.Objects;
 
-public class Player {
+public class  Player {
 
     private Integer age;
     private String name;
