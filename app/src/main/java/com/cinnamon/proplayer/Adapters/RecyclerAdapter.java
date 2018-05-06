@@ -65,11 +65,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         private TextView nombre_equipo;
         private TextView puntaje;
         private TextView ranking;
+        private ImageView escudo_equipo;
 
-        private TextView equipoLocal;
+        private TextView rival;
         private TextView resultado;
-        private TextView equipoVisitante;
+        private TextView estadio;
         private TextView condicionPartido;
+        private TextView partidosJugados;
+        private TextView diferenciaGol;
+        private TextView fairPlay;
+        private ImageView escudo_rival;
 
 
         public ViewHolder(View itemView) {
@@ -90,11 +95,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
             nombre_equipo = (TextView)itemView.findViewById(R.id.nombre_equipo);
             puntaje = (TextView)itemView.findViewById(R.id.puntaje);
             ranking = (TextView)itemView.findViewById(R.id.ranking);
+            escudo_equipo =(ImageView)itemView.findViewById(R.id.escudo_equipo);
 
-            equipoLocal =(TextView)itemView.findViewById(R.id.equipo_local);
+            rival =(TextView)itemView.findViewById(R.id.rival);
             resultado = (TextView)itemView.findViewById(R.id.resultado);
-            equipoVisitante = (TextView)itemView.findViewById(R.id.equipo_visitante);
+            estadio = (TextView)itemView.findViewById(R.id.estadio);
             condicionPartido = (TextView)itemView.findViewById(R.id.condicion_partido);
+            escudo_rival = (ImageView)itemView.findViewById(R.id.escudo_rival);
+            partidosJugados=(TextView)itemView.findViewById(R.id.partidos_jugados);
+            diferenciaGol=(TextView)itemView.findViewById(R.id.difencia_gol);
+            fairPlay=(TextView)itemView.findViewById(R.id.fair_play);
+
             }
 
         //Seteo las noticias
@@ -136,30 +147,33 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
             CardView cardView = (CardView)itemView.findViewById(R.id.card_view);
             nombre_equipo.setText(team.getNombre());
             puntaje.setText(team.getPuntaje().toString());
+            escudo_equipo.setImageResource(team.getEscudo());
+            ranking.setText(team.getRanking().toString());
 
-            if(team.getRanking()<4){
-                ranking.setText(team.getRanking().toString());
-                cardView.setBackgroundColor(Color.rgb(255,215,0));
+           if(team.getRanking()<4){
+                cardView.setCardBackgroundColor(Color.rgb(255,215,0));
             }
             else if(team.getRanking()<7){
-                ranking.setText(team.getRanking().toString());
-                cardView.setBackgroundColor(Color.rgb(192,192,192));
+
+                cardView.setCardBackgroundColor(Color.rgb(192,192,192));
             }
             else if (team.getRanking()<10){
-                ranking.setText(team.getRanking().toString());
-                cardView.setBackgroundColor(Color.rgb(205,127,50));
-            } else {
-                ranking.setText(team.getRanking().toString());
+
+                cardView.setCardBackgroundColor(Color.rgb(205,127,50));
             }
+            partidosJugados.setText(team.getPartidosJugados().toString());
+            diferenciaGol.setText(team.getDiferenciagol().toString());
+            fairPlay.setText(team.getFairplay().toString());
 
         }
 
         //Seteo los partidos
         public void bindMatch(Match match){
-            equipoLocal.setText(match.getLocal());
+            rival.setText(match.getRival());
             resultado.setText(match.getResultado());
-            equipoVisitante.setText(match.getVisitante());
+            estadio.setText(match.getEstadio());
             condicionPartido.setText(match.getCondicionPartido());
+            escudo_rival.setImageResource(match.getEscudo());
         }
     }
 }

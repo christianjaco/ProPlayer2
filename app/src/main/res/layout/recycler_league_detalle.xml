@@ -10,29 +10,79 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:weightSum="3">
+    android:weightSum="3"
+    >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="23dp"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_weight="1"
+        android:textSize="17sp"
+        android:paddingRight="3dp"
+        android:paddingLeft="2dp"
+        android:layout_gravity="center_vertical"
         android:id="@+id/ranking"/>
 
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/escudo_equipo"
+        android:layout_margin="1dp"
+        android:paddingRight="3dp"
+        />
+
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:textSize="16sp"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/nombre_equipo"
+        android:layout_weight="2"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_weight="1"
-        android:id="@+id/nombre_equipo"/>
+        android:layout_gravity="center_vertical"
+        android:weightSum="4">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/puntaje"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/partidos_jugados"
+        android:textSize="16sp"
+        android:layout_gravity="center_vertical"
         android:layout_weight="1"
-        android:id="@+id/puntaje"/>
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/difencia_gol"
+        android:textSize="16sp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fair_play"
+        android:textSize="16sp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        />
+
+    </LinearLayout>
 
 </LinearLayout>
 

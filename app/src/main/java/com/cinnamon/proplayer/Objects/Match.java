@@ -1,8 +1,10 @@
 package com.cinnamon.proplayer.Objects;
 
 public class Match {
-    private String local;
-    private String visitante;
+
+    private String rival;
+    private String estadio;
+    private Integer escudo;
     private String resultado;
     private String condicionPartido;
 
@@ -14,37 +16,50 @@ public class Match {
     private String goleadores;
     private Player player;
 
-    public Match(String local, String visitante, String resultado, String campeonato, Integer goles, String goleadores, Player player) {
-        this.local = local;
-        this.visitante = visitante;
+    public Match(String rival, String estadio, Integer escudo, String resultado, String condicionPartido, String dia, String hora, Stadium cancha, Integer goles, String goleadores, Player player) {
+        this.rival = rival;
+        this.estadio = estadio;
+        this.escudo = escudo;
         this.resultado = resultado;
-        this.condicionPartido = campeonato;
+        this.condicionPartido = condicionPartido;
+        this.dia = dia;
+        this.hora = hora;
+        this.cancha = cancha;
         this.goles = goles;
         this.goleadores = goleadores;
         this.player = player;
     }
 
-    public Match(String local, String visitante, String resultado,String condicionPartido) {
-        this.local = local;
-        this.visitante = visitante;
+    public Match(Integer escudo, String rival, String estadio, String resultado, String condicionPartido) {
+        this.escudo = escudo;
+        this.rival = rival;
+        this.estadio = estadio;
         this.resultado = resultado;
         this.condicionPartido = condicionPartido;
     }
 
-    public String getLocal() {
-        return local;
+    public String getRival() {
+        return rival;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public void setRival(String rival) {
+        this.rival = rival;
     }
 
-    public String getVisitante() {
-        return visitante;
+    public String getEstadio() {
+        return estadio;
     }
 
-    public void setVisitante(String visitante) {
-        this.visitante = visitante;
+    public void setEstadio(String estadio) {
+        this.estadio = estadio;
+    }
+
+    public Integer getEscudo() {
+        return escudo;
+    }
+
+    public void setEscudo(Integer escudo) {
+        this.escudo = escudo;
     }
 
     public String getResultado() {

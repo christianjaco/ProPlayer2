@@ -35,7 +35,7 @@ public class TeamStatsFragment extends Fragment {
 
 
         List<Player> players = new ArrayList<>();
-        players.add(new Player(R.drawable.profile_foto,"Christian Jaco",R.drawable.moral_baja,"POR",0,8.57,false));
+        players.add(new Player(R.drawable.profile_foto,"Christian Jaco",R.drawable.moral_alta,"POR",0,8.57,false));
         players.add(new Player(R.drawable.profile_foto,"Nico Ferluga",R.drawable.moral_normal,"DEL",5,8.57,true));
         players.add(new Player(R.drawable.profile_foto,"Fede Ferluga",R.drawable.moral_alta,"DEL",4,8.57,false));
         players.add(new Player(R.drawable.profile_foto,"Rodrigo Ferluga",R.drawable.moral_normal,"DEF",2,8.57,false));

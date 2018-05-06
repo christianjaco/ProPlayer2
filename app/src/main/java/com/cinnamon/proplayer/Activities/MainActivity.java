@@ -1,4 +1,4 @@
-package com.cinnamon.proplayer;
+package com.cinnamon.proplayer.Activities;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import com.cinnamon.proplayer.Fragments.AddFragment;
 import com.cinnamon.proplayer.Fragments.HomeFragment;
 import com.cinnamon.proplayer.Fragments.SearchFragment;
+import com.cinnamon.proplayer.R;
 /*
 xml: activity_main
  */

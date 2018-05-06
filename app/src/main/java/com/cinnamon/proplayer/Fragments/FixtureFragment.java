@@ -36,18 +36,18 @@ public class FixtureFragment extends Fragment {
 
 
         List<Match>matches = new ArrayList<>();
-        matches.add(new Match("Gordos Rockets","Talleres","2-0","Playoff"));
-        matches.add(new Match("Pectus Frigore","Gordos Rockets","1-3","Liga"));
-        matches.add(new Match("Gordos Rockets","La Famosa G","5-0","Liga"));
-        matches.add(new Match("Deportivo Polvorines","Gordos Rockets","2-0","Liga"));
-        matches.add(new Match("Gordos Rockets","Hellas FC","6-0","Amistoso"));
-        matches.add(new Match("La Gilada","Gordos Rockets","0-4","Liga"));
-        matches.add(new Match("Gordos Rockets","Gregoria FC","5-1","Amistoso"));
-        matches.add(new Match("Dromedarios","Gordos Rockets","0-0","Amistoso"));
-        matches.add(new Match("Gordos Rockets","Estelares Futbol Club","2-0","Liga"));
-        matches.add(new Match("Hellas FC","Gordos Rockets","3-0","Liga"));
-        matches.add(new Match("Gordos Rockets","Pectus Frigore","2-0","Amistoso"));
-        matches.add(new Match("Gordos Rockets","Talleres","2-0","Liga"));
+        matches.add(new Match(R.drawable.volley,"Talleres","L","2-0","Playoff"));
+        matches.add(new Match(R.drawable.volley,"Pectus Frigore","V","1-3","Liga"));
+        matches.add(new Match(R.drawable.escudo_gordos,"La Famosa G","L","5-0","Liga"));
+        matches.add(new Match(R.drawable.volley,"Deportivo Polvorines","V","2-0","Liga"));
+        matches.add(new Match(R.drawable.volley,"Hellas FC","L","6-0","Amistoso"));
+        matches.add(new Match(R.drawable.escudo_gordos,"La Gilada","V","0-4","Liga"));
+        matches.add(new Match(R.drawable.escudo_gordos,"Gregoria FC","L","5-1","Amistoso"));
+        matches.add(new Match(R.drawable.volley,"Dromedarios","V","0-0","Amistoso"));
+        matches.add(new Match(R.drawable.escudo_gordos,"Estelares Futbol Club","L","2-0","Liga"));
+        matches.add(new Match(R.drawable.escudo_gordos,"Hellas FC","L","3-0","Liga"));
+        matches.add(new Match(R.drawable.escudo_gordos,"Pectus Frigore","V","2-0","Amistoso"));
+        matches.add(new Match(R.drawable.escudo_gordos,"Talleres","V","2-0","Liga"));
 
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view_fixture);
         recyclerView.setHasFixedSize(true);

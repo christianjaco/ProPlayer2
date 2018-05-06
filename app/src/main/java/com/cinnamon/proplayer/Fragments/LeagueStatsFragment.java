@@ -25,9 +25,6 @@ import java.util.List;
      */
 
 public class LeagueStatsFragment extends Fragment {
-
-
-
     View view;
 
     @Nullable
@@ -36,18 +33,21 @@ public class LeagueStatsFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_league, container, false);
 
         List<Team> teams = new ArrayList<>();
-        teams.add(new Team(53,"Gordos Rockets",1));
-        teams.add(new Team(50,"Pectus Frigore",2));
-        teams.add(new Team(48,"Talleres",3));
-        teams.add(new Team(46,"La Famosa G",4));
-        teams.add(new Team(40,"Deportivo Polvorines",5));
-        teams.add(new Team(40,"Hellas FC",6));
-        teams.add(new Team(39,"La Gilada",7));
-        teams.add(new Team(37,"Gregoria FC",8));
-        teams.add(new Team(30,"Dromedarios",9));
-        teams.add(new Team(30,"Estelas Futbol Club",10));
-        //teams.add(new Team(14,"Tikki Bar",11));
-        //teams.add(new Team(8,"Club di Paglia",12));
+        teams.add(new Team(R.drawable.escudo_gordos,53,"Gordos Rockets",1,12,31,1));
+        teams.add(new Team(R.drawable.escudo_gordos,50,"Pectus Frigore",2,12,12,0));
+        teams.add(new Team(R.drawable.escudo_gordos,48,"Talleres",3,12,23,1));
+        teams.add(new Team(R.drawable.escudo_gordos,46,"La Famosa G",4,12,45,1));
+        teams.add(new Team(R.drawable.escudo_gordos,40,"Deportivo Polvorines",5,12,27,1));
+        teams.add(new Team(R.drawable.escudo_gordos,40,"Hellas FC",6,12,12,9));
+        teams.add(new Team(R.drawable.escudo_gordos,38,"La Gilada",7,12,8,0));
+        teams.add(new Team(R.drawable.escudo_gordos,37,"Gregoria FC",8,12,5,12));
+        teams.add(new Team(R.drawable.escudo_gordos,30,"Dromedarios",9,12,0,31));
+        //teams.add(new Team(R.drawable.escudo_gordos,30,"Estelar Futbol Club",10));
+        //teams.add(new Team(R.drawable.escudo_gordos,14,"Tikki Bar",11));
+        //teams.add(new Team(R.drawable.escudo_gordos,8,"Club di Paglia",12));
+        //teams.add(new Team(R.drawable.escudo_gordos,8,"Club di Paglia",13));
+        //teams.add(new Team(R.drawable.escudo_gordos,8,"Club di Paglia",14));
+        //teams.add(new Team(R.drawable.escudo_gordos,8,"Club di Paglia",15));
 
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_league);

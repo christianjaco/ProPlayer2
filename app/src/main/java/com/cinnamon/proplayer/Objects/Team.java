@@ -3,7 +3,7 @@ package com.cinnamon.proplayer.Objects;
 public class Team {
 
 private Player player;
-private Integer logo;
+private Integer escudo;
 private Stadium stadium;
 private Integer puntaje;
 private Integer diferenciagol;
@@ -17,35 +17,15 @@ private Integer partidosPerdidos;
 private Integer ranking;
 
 
-    public Team(Integer ranking, Integer logo, Integer puntaje, Integer diferenciagol, Integer fairplay, String nombre, Integer partidosJugados, Integer partidosGanados, Integer partidosEmpatados, Integer partidosPerdidos) {
+
+    public Team(Integer escudo,Integer puntaje, String nombre, Integer ranking, Integer partidosJugados,Integer diferenciagol,Integer fairplay) {
+        this.escudo = escudo;
+        this.puntaje = puntaje;
+        this.nombre = nombre;
         this.ranking = ranking;
-        this.logo = logo;
-        this.puntaje = puntaje;
+        this.partidosJugados=partidosJugados;
         this.diferenciagol = diferenciagol;
-        this.fairplay = fairplay;
-        this.nombre = nombre;
-        this.partidosJugados = partidosJugados;
-        this.partidosGanados = partidosGanados;
-        this.partidosEmpatados = partidosEmpatados;
-        this.partidosPerdidos = partidosPerdidos;
-    }
-
-    public Team(Integer logo, Integer puntaje, Integer diferenciagol, Integer fairplay, String nombre) {
-        this.logo = logo;
-        this.puntaje = puntaje;
-        this.diferenciagol = diferenciagol;
-        this.fairplay = fairplay;
-        this.nombre = nombre;
-    }
-
-    public Team(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Team(Integer puntaje, String nombre, Integer posicion) {
-        this.puntaje = puntaje;
-        this.nombre = nombre;
-        this.ranking = posicion;
+        this.fairplay=fairplay;
     }
 
     public Player getPlayer() {
@@ -56,12 +36,12 @@ private Integer ranking;
         this.player = player;
     }
 
-    public Integer getLogo() {
-        return logo;
+    public Integer getEscudo() {
+        return escudo;
     }
 
-    public void setLogo(Integer logo) {
-        this.logo = logo;
+    public void setEscudo(Integer escudo) {
+        this.escudo = escudo;
     }
 
     public Stadium getStadium() {
