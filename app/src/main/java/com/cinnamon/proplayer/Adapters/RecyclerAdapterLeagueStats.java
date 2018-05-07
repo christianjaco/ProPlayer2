@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.cinnamon.proplayer.Adapters.RecyclerAdapter;
 import com.cinnamon.proplayer.Objects.Team;
@@ -31,11 +32,17 @@ public class RecyclerAdapterLeagueStats extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         Team team = teams.get(position);
 
         RecyclerAdapter.ViewHolder viewHolderTeams= (RecyclerAdapter.ViewHolder)holder;
         viewHolderTeams.bindTeam(team);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,"Abro posicion "+position,Toast.LENGTH_SHORT).show();            }
+        });
+
     }
 
     @Override

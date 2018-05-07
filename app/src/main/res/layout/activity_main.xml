@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity">
-    
 
 
     <FrameLayout
@@ -27,7 +26,7 @@
         android:layout_alignParentBottom="true"
         design:menu ="@menu/menu_bottom_navigation"
         android:id="@+id/bottom_navigation_view"
-        app:itemIconTint="@color/bottomNavIcon"
+        app:itemIconTint="@color/tabIndicadtorColor"
         app:itemTextColor="@color/bottomNavIcon"
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"

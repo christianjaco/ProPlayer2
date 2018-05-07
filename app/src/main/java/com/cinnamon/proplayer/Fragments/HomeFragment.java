@@ -11,10 +11,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toolbar;
 
 import com.cinnamon.proplayer.Adapters.ViewPagerAdapter;
 import com.cinnamon.proplayer.R;
@@ -43,6 +45,13 @@ public class HomeFragment extends Fragment {
         appBarLayout = (AppBarLayout)view.findViewById(R.id.appbar_id);
         viewPager = (ViewPager)view.findViewById(R.id.home_view_pager);
 
+       /* final android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) view.findViewById(R.id.toolbar);
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        activity.setSupportActionBar(toolbar);
+
+        activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       */
+
         //Hago la imagen de perfil redonda
         Drawable originalDrawable = getResources().getDrawable(R.drawable.profile_foto);
         Bitmap originalBitmap = ((BitmapDrawable) originalDrawable).getBitmap();
@@ -60,8 +69,8 @@ public class HomeFragment extends Fragment {
 
         //Creo los fragments para el Home
         adapter.addFragment(new MailboxFragment(),"Buzón");
-        adapter.addFragment(new TeamStatsFragment(),"Plantilla");
-        adapter.addFragment(new LeagueStatsFragment(),"Liga");
+        adapter.addFragment(new TeamStatsFragment(),"Plantel");
+        adapter.addFragment(new LeagueStatsFragment(),"Zona");
         adapter.addFragment(new FixtureFragment(),"Forma");
 
         viewPager.setAdapter(adapter);

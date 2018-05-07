@@ -42,12 +42,12 @@ public class LeagueStatsFragment extends Fragment {
         teams.add(new Team(R.drawable.escudo_gordos,38,"La Gilada",7,12,8,0));
         teams.add(new Team(R.drawable.escudo_gordos,37,"Gregoria FC",8,12,5,12));
         teams.add(new Team(R.drawable.escudo_gordos,30,"Dromedarios",9,12,0,31));
-        //teams.add(new Team(R.drawable.escudo_gordos,30,"Estelar Futbol Club",10));
-        //teams.add(new Team(R.drawable.escudo_gordos,14,"Tikki Bar",11));
-        //teams.add(new Team(R.drawable.escudo_gordos,8,"Club di Paglia",12));
-        //teams.add(new Team(R.drawable.escudo_gordos,8,"Club di Paglia",13));
-        //teams.add(new Team(R.drawable.escudo_gordos,8,"Club di Paglia",14));
-        //teams.add(new Team(R.drawable.escudo_gordos,8,"Club di Paglia",15));
+        teams.add(new Team(R.drawable.escudo_gordos,30,"Estelar Futbol Club",10,12,0,12));
+        teams.add(new Team(R.drawable.escudo_gordos,22,"Tikki Bar",11,12,0,12));
+        teams.add(new Team(R.drawable.escudo_gordos,18,"Volley FC",12,12,0,12));
+        teams.add(new Team(R.drawable.escudo_gordos,16,"Poco Pique",13,12,0,12));
+        teams.add(new Team(R.drawable.escudo_gordos,8,"Peppa Pig",14,12,0,12));
+        teams.add(new Team(R.drawable.escudo_gordos,7,"Macacos FC",15,12,0,12));
 
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_league);

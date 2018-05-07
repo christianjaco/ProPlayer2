@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     
    <android.support.design.widget.AppBarLayout
        android:layout_width="match_parent"
-       android:layout_height="60dp"
+       android:layout_height="48dp"
        android:id="@+id/search_players"
-       android:background="#e6e3e3"
+       android:background="#d2d1d1"
        >
-
    </android.support.design.widget.AppBarLayout>
 
+   <android.support.design.widget.TabLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:tabGravity="fill"
+       app:tabMode="fixed"
+       android:id="@+id/tablayout_search"
+       app:tabTextColor="@color/bottomNavIcon"
+       app:tabIndicatorColor="@color/tabIndicadtorColor"
+       android:background="#ffffff"
+       app:tabTextAppearance="@style/TabLayoutTextStyle"
+       app:tabIndicatorHeight="3dp"
+       app:tabSelectedTextColor="@color/bottomNavIcon"
+       />
 
-
-
-
+   <android.support.v4.view.ViewPager
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/search_view_pager">
+   </android.support.v4.view.ViewPager>
 
 </LinearLayout>
