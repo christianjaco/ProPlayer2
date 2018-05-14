@@ -1,11 +1,17 @@
 package com.cinnamon.proplayer.Adapters;
 
+import android.app.Activity;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.GradientDrawable;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cinnamon.proplayer.Activities.MainActivity;
 import com.cinnamon.proplayer.Fragments.NewsItemFragment;
 import com.cinnamon.proplayer.Objects.Match;
 import com.cinnamon.proplayer.Objects.News;
@@ -53,6 +58,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
             @Override
             public void onClick(View view) {
                 Toast.makeText(context,"Abro posicion "+ position,Toast.LENGTH_SHORT).show();
+
+/*
+                //Inflate the fragment
+
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                NewsItemFragment fragmentNewItem = new NewsItemFragment();
+
+                //Bundle
+                String args = "valorString";
+                Bundle bundle = new Bundle();
+                bundle.putString("clave", args);
+                fragmentNewItem.setArguments(bundle);
+
+
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragmentNewItem).addToBackStack(null).commit();
+
+*/
             }
         });
     }
@@ -88,6 +110,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         private TextView diferenciaGol;
         private TextView fairPlay;
         private ImageView escudo_rival;
+        private ImageView dot_fixture;
+        private FrameLayout pos_clasif;
 
 
 
@@ -110,15 +134,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
             puntaje = (TextView)itemView.findViewById(R.id.puntaje);
             ranking = (TextView)itemView.findViewById(R.id.ranking);
             escudo_equipo =(ImageView)itemView.findViewById(R.id.escudo_equipo);
+            partidosJugados=(TextView)itemView.findViewById(R.id.partidos_jugados);
+            diferenciaGol=(TextView)itemView.findViewById(R.id.difencia_gol);
+            fairPlay=(TextView)itemView.findViewById(R.id.fair_play);
+
 
             rival =(TextView)itemView.findViewById(R.id.rival);
             resultado = (TextView)itemView.findViewById(R.id.resultado);
             estadio = (TextView)itemView.findViewById(R.id.estadio);
             condicionPartido = (TextView)itemView.findViewById(R.id.condicion_partido);
             escudo_rival = (ImageView)itemView.findViewById(R.id.escudo_rival);
-            partidosJugados=(TextView)itemView.findViewById(R.id.partidos_jugados);
-            diferenciaGol=(TextView)itemView.findViewById(R.id.difencia_gol);
-            fairPlay=(TextView)itemView.findViewById(R.id.fair_play);
+            dot_fixture = (ImageView) itemView.findViewById(R.id.won_lost_image);
+            pos_clasif = (FrameLayout) itemView.findViewById(R.id.frame_positions);
 
             }
 
@@ -128,6 +155,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
             titulo.setText(news.getTitulo());
             imagen.setImageResource(news.getFoto());
             }
+
         //Seteo a los jugadores
         public void bindPlayers(Player player){
 
@@ -144,6 +172,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
             posicion.setText(player.getPosicion());
             profile_picture.setImageResource(player.getAvatar());
             moral.setImageResource(player.getMoral());
+            
 
             if (player.getMoral() == R.drawable.moral_alta){
                 moral.setColorFilter(Color.rgb(74,146,59));
@@ -156,30 +185,31 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         }
         //Seteo a los equipos
         public void bindTeam(Team team){
-            CardView cardView = (CardView)itemView.findViewById(R.id.card_view);
+            
             nombre_equipo.setText(team.getNombre());
             puntaje.setText(team.getPuntaje().toString());
             escudo_equipo.setImageResource(team.getEscudo());
             ranking.setText(team.getRanking().toString());
-
-
-           if(team.getRanking()<= 3){
-                cardView.setCardBackgroundColor(Color.rgb(255,215,0));
-
-            }
-            else if(team.getRanking()<= 6){
-                cardView.setCardBackgroundColor(Color.rgb(192,192,192));
-            }
-            else if (team.getRanking()<= 9){
-                cardView.setCardBackgroundColor(Color.rgb(205,127,50));
-            }
-            else if (team.getRanking()<= 18){
-               cardView.setCardBackgroundColor(Color.rgb(255,255,255));
-           }
-
             partidosJugados.setText(team.getPartidosJugados().toString());
             diferenciaGol.setText(team.getDiferenciagol().toString());
             fairPlay.setText(team.getFairplay().toString());
+
+            pos_clasif.setBackgroundResource(R.drawable.rounded_shape);
+
+            GradientDrawable drawable = (GradientDrawable) pos_clasif.getBackground();
+
+           if(team.getRanking()<= 3){
+                drawable.setColor(Color.rgb(255,215,0));
+            }
+            else if(team.getRanking()<= 6){
+               drawable.setColor(Color.rgb(192,192,192));
+            }
+            else if (team.getRanking()<= 9){
+               drawable.setColor(Color.rgb(205,127,50));
+            }
+            else if (team.getRanking()<= 20){
+               drawable.setColor(Color.rgb(255,255,255));
+           }
 
         }
 
@@ -190,15 +220,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
             estadio.setText(match.getEstadio());
             condicionPartido.setText(match.getCondicionPartido());
             escudo_rival.setImageResource(match.getEscudo());
-            FrameLayout frameLayout = (FrameLayout) itemView.findViewById(R.id.frame_layout);
+            dot_fixture.setImageResource(match.getWon_lost());
+
+
 
             if (match.getGano() == 1){
-                frameLayout.setBackgroundColor(Color.rgb(0,245,0));
+                dot_fixture.setColorFilter(Color.rgb(0,210,0));
 
             }else if (match.getGano() == 0){
-                frameLayout.setBackgroundColor(Color.rgb(245,0,0));
+                dot_fixture.setColorFilter(Color.rgb(220,0,0));
             } else {
-                frameLayout.setBackgroundColor(Color.rgb(245,245,0));
+                dot_fixture.setColorFilter(Color.rgb(230,230,0));
             }
         }
     }

@@ -30,8 +30,8 @@ public class SearchFragment extends Fragment {
         viewPager = (ViewPager)view.findViewById(R.id.search_view_pager);
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager());
-        adapter.addFragment(new OtherLeaguesFragment(),"Ligas");
-        adapter.addFragment(new StatisticsFragment(),"Estadisticas");
+        adapter.addFragment(new ExploreLeaguesFragment(),"Ligas");
+        adapter.addFragment(new ExploreStatisticsFragment(),"Estadisticas");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

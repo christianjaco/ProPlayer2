@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
@@ -11,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,7 +73,7 @@ public class HomeFragment extends Fragment {
         adapter.addFragment(new MailboxFragment(),"Buzón");
         adapter.addFragment(new TeamStatsFragment(),"Plantel");
         adapter.addFragment(new LeagueStatsFragment(),"Zona");
-        adapter.addFragment(new FixtureFragment(),"Forma");
+        adapter.addFragment(new FixtureFragment(),"Historial");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

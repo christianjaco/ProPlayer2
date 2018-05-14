@@ -28,26 +28,15 @@ public class FixtureFragment extends Fragment {
 
     private View view;
 
-
+    private List<Match>matches;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_fixture,container,false);
 
 
-        List<Match>matches = new ArrayList<>();
-        matches.add(new Match(R.drawable.volley,"Talleres","L","2-0","Playoff",1));
-        matches.add(new Match(R.drawable.volley,"Pectus Frigore","V","1-3","Liga",0));
-        matches.add(new Match(R.drawable.escudo_gordos,"La Famosa G","L","5-0","Liga",1));
-        matches.add(new Match(R.drawable.volley,"Deportivo Polvorines","V","0-0","Liga",2));
-        matches.add(new Match(R.drawable.volley,"Hellas FC","L","6-0","Amistoso",1));
-        matches.add(new Match(R.drawable.escudo_gordos,"La Gilada","V","0-4","Liga",0));
-        matches.add(new Match(R.drawable.escudo_gordos,"Gregoria FC","L","5-1","Amistoso",1));
-        matches.add(new Match(R.drawable.volley,"Dromedarios","V","1-0","Amistoso",1));
-        matches.add(new Match(R.drawable.escudo_gordos,"Estelares Futbol Club","L","2-0","Liga",1));
-        matches.add(new Match(R.drawable.escudo_gordos,"Hellas FC","L","3-0","Liga",1));
-        matches.add(new Match(R.drawable.escudo_gordos,"Pectus Frigore","V","2-0","Amistoso",1));
-        matches.add(new Match(R.drawable.escudo_gordos,"Talleres","V","2-0","Liga",1));
+        matches= new ArrayList<>();
+        addMatch();
 
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view_fixture);
         recyclerView.setHasFixedSize(true);
@@ -58,5 +47,21 @@ public class FixtureFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         return view;
+    }
+
+    private void addMatch(){
+        matches.add(new Match(R.drawable.volley,"Talleres","L","2-0","Playoff",1,R.drawable.dot_fixture));
+        matches.add(new Match(R.drawable.volley,"Pectus Frigore","V","1-3","Liga",0,R.drawable.dot_fixture));
+        matches.add(new Match(R.drawable.escudo_gordos,"La Famosa G","L","5-0","Liga",1,R.drawable.dot_fixture));
+        matches.add(new Match(R.drawable.volley,"Deportivo Polvorines","V","0-0","Liga",2,R.drawable.dot_fixture));
+        matches.add(new Match(R.drawable.volley,"Hellas FC","L","6-0","Amistoso",1,R.drawable.dot_fixture));
+        matches.add(new Match(R.drawable.escudo_gordos,"La Gilada","V","0-4","Liga",0,R.drawable.dot_fixture));
+        matches.add(new Match(R.drawable.escudo_gordos,"Gregoria FC","L","5-1","Amistoso",1,R.drawable.dot_fixture));
+        matches.add(new Match(R.drawable.volley,"Dromedarios","V","1-0","Amistoso",1,R.drawable.dot_fixture));
+        matches.add(new Match(R.drawable.escudo_gordos,"Estelares Futbol Club","L","2-0","Liga",1,R.drawable.dot_fixture));
+        matches.add(new Match(R.drawable.escudo_gordos,"Hellas FC","L","3-0","Liga",1,R.drawable.dot_fixture));
+        matches.add(new Match(R.drawable.escudo_gordos,"Pectus Frigore","V","0-1","Amistoso",0,R.drawable.dot_fixture));
+        matches.add(new Match(R.drawable.escudo_gordos,"Talleres","V","2-0","Liga",1,R.drawable.dot_fixture));
+
     }
 }

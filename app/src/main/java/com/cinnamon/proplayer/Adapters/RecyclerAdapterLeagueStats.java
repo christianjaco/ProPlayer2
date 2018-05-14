@@ -40,7 +40,9 @@ public class RecyclerAdapterLeagueStats extends RecyclerView.Adapter {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"Abro posicion "+position,Toast.LENGTH_SHORT).show();            }
+                Toast.makeText(context,"Abro posicion "+position,Toast.LENGTH_SHORT).show();
+
+            }
         });
 
     }

@@ -25,8 +25,8 @@ import java.util.List;
 
 public class TeamStatsFragment extends Fragment {
 
-    View view;
-
+    private View view;
+    private List<Player> players;
 
     @Nullable
     @Override
@@ -34,15 +34,8 @@ public class TeamStatsFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_players,container,false);
 
 
-        List<Player> players = new ArrayList<>();
-        players.add(new Player(R.drawable.profile_foto,"Christian Jaco",R.drawable.moral_alta,"POR",0,8.57,false));
-        players.add(new Player(R.drawable.profile_foto,"Nico Ferluga",R.drawable.moral_normal,"DEL",5,8.57,true));
-        players.add(new Player(R.drawable.profile_foto,"Fede Ferluga",R.drawable.moral_alta,"DEL",4,8.57,false));
-        players.add(new Player(R.drawable.profile_foto,"Rodrigo Ferluga",R.drawable.moral_normal,"DEF",2,8.57,false));
-        players.add(new Player(R.drawable.profile_foto,"Nacho Herrera",R.drawable.moral_alta,"MED",8,8.57,false));
-        players.add(new Player(R.drawable.profile_foto,"Sebi Ferluga",R.drawable.moral_baja,"DEF",2,8.57,false));
-        players.add(new Player(R.drawable.profile_foto,"Juani Paillet",R.drawable.moral_normal,"DEF",6,8.57,false));
-        players.add(new Player(R.drawable.profile_foto,"Nacho Leyro",R.drawable.moral_alta,"MED",2,8.57,false));
+        players = new ArrayList<>();
+        addPlayer();
 
 
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view_plantilla);
@@ -54,5 +47,16 @@ public class TeamStatsFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         return view;
+    }
+
+    private void addPlayer() {
+        players.add(new Player(R.drawable.profile_foto,"Christian Jaco",R.drawable.moral_alta,"POR",0,8.57,false));
+        players.add(new Player(R.drawable.profile_foto,"Nico Ferluga",R.drawable.moral_normal,"DEL",5,8.57,true));
+        players.add(new Player(R.drawable.profile_foto,"Fede Ferluga",R.drawable.moral_alta,"DEL",4,8.57,false));
+        players.add(new Player(R.drawable.profile_foto,"Rodrigo Ferluga",R.drawable.moral_normal,"DEF",2,8.57,false));
+        players.add(new Player(R.drawable.profile_foto,"Nacho Herrera",R.drawable.moral_alta,"MED",8,8.57,false));
+        players.add(new Player(R.drawable.profile_foto,"Sebi Ferluga",R.drawable.moral_baja,"DEF",2,8.57,false));
+        players.add(new Player(R.drawable.profile_foto,"Juani Paillet",R.drawable.moral_normal,"DEF",6,8.57,false));
+        players.add(new Player(R.drawable.profile_foto,"Nacho Leyro",R.drawable.moral_alta,"MED",2,8.57,false));
     }
 }

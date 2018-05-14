@@ -8,6 +8,7 @@ public class Match {
     private String resultado;
     private String condicionPartido;
     private Integer gano;
+    private Integer won_lost;
 
     private String dia;
     private String hora;
@@ -31,13 +32,14 @@ public class Match {
         this.player = player;
     }
 
-    public Match(Integer escudo, String rival, String estadio, String resultado, String condicionPartido, Integer gano) {
+    public Match(Integer escudo, String rival, String estadio, String resultado, String condicionPartido, Integer gano,Integer won_lost) {
         this.escudo = escudo;
         this.rival = rival;
         this.estadio = estadio;
         this.resultado = resultado;
         this.condicionPartido = condicionPartido;
         this.gano = gano;
+        this.won_lost = won_lost;
     }
 
     public String getRival() {
@@ -142,5 +144,13 @@ public class Match {
 
     public void setGano(Integer gano) {
         this.gano = gano;
+    }
+
+    public Integer getWon_lost() {
+        return won_lost;
+    }
+
+    public void setWon_lost(Integer won_lost) {
+        this.won_lost = won_lost;
     }
 }

@@ -9,14 +9,14 @@ import android.view.ViewGroup;
 
 import com.cinnamon.proplayer.R;
 
-public class StatisticsFragment extends Fragment {
+public class ExploreLeaguesFragment extends Fragment {
     private View view;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_statistics,container,false);
+        view = inflater.inflate(R.layout.fragment_other_leagues,container,false);
 
 
         return view;
