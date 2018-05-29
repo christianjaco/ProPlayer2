@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lista_dias">
+        <item>Sabado</item>
+        <item>Domingo</item>
+    </string-array>
+
+
+    <string-array name="lista_zonas">
+        <item>Belgrano</item>
+        <item>Nuñez</item>
+        <item>Saavedra</item>
+    </string-array>
+
+    </resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="6dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/image_convocatoria"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_shape"
+        android:id="@+id/frame_jugador_convocatoria"
+        android:layout_gravity="bottom|center"
+        >
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/nombre_convocatoria"/>
+
+    </FrameLayout>
+</FrameLayout>
+
+</android.support.v7.widget.CardView>
