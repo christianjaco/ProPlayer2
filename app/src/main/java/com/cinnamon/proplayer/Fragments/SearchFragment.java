@@ -32,6 +32,7 @@ public class SearchFragment extends Fragment {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ImageView framePlayers;
+    private ImageView agregarVideo;
     private FloatingActionButton floatingActionButton;
 
     @Nullable
@@ -54,8 +55,8 @@ public class SearchFragment extends Fragment {
         tabLayout.setupWithViewPager(viewPager);
 
         -------------------------------------------------------------------------------------------*/
-
-        framePlayers=(ImageView)view.findViewById(R.id.frame_jugador_convocatoria);
+        agregarVideo = (ImageView)view.findViewById(R.id.agregar_video);
+        framePlayers =(ImageView)view.findViewById(R.id.frame_jugador_convocatoria);
         floatingActionButton = (FloatingActionButton)view.findViewById(R.id.fab_add_video);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +64,12 @@ public class SearchFragment extends Fragment {
                 Toast.makeText(getContext(),"Agregar Video",Toast.LENGTH_SHORT).show();
             }
         });
-
+        agregarVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(),"Ver Video",Toast.LENGTH_SHORT).show();
+            }
+        });
         return view;
     }
 
