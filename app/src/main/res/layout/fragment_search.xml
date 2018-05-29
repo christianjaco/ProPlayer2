@@ -6,12 +6,27 @@
     
    <android.support.design.widget.AppBarLayout
        android:layout_width="match_parent"
-       android:layout_height="48dp"
-       android:id="@+id/search_players"
-       android:background="#d2d1d1"
+       android:layout_height="55dp"
+       android:id="@+id/search_players_appbar"
+       android:background="#ffffff"
        >
+ <android.support.v7.widget.SearchView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="3sp"
+          android:layout_gravity="center|right"
+          android:id="@+id/buscarUsuario">
+
+
+      </android.support.v7.widget.SearchView>
    </android.support.design.widget.AppBarLayout>
 
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="5dp"
+       android:background="@drawable/shadow_search"/>
+
+   <!--
    <android.support.design.widget.TabLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -31,5 +46,37 @@
        android:layout_height="match_parent"
        android:id="@+id/search_view_pager">
    </android.support.v4.view.ViewPager>
+-->
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:src="@drawable/video_png"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        />
+
+<android.support.design.widget.FloatingActionButton
+    android:id="@+id/fab_add_video"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/add_png_vector"
+    android:layout_alignParentRight="true"
+    android:layout_alignBottom="@id/header"
+    android:layout_marginBottom="-32dp"
+    android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

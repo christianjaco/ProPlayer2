@@ -31,6 +31,11 @@ public class  Player {
     public Player(String name) {
         this.name = name;
     }
+    public Player(Integer avatar, String name) {
+        this.avatar = avatar;
+        this.name = name;
+    }
+
 
     public Integer getAmarillas() {
         return amarillas;

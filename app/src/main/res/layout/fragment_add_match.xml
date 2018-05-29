@@ -1,11 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent">
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccionar Día"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccionar Zona"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="4dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinner_dia"
+            android:background="@drawable/custom_spinner_background"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:spinnerMode="dialog"
+            android:layout_weight="1"
+            android:popupBackground="@color/backgroundRecyclerMailbox" />
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinner_zona"
+            android:background="@drawable/custom_spinner_background"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:spinnerMode="dialog"
+            android:layout_weight="1"
+            android:popupBackground="@color/backgroundRecyclerMailbox" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/backgroundRecyclerMailbox" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/rounded_shape"
+        android:id="@+id/frame_convocados"
+        >
+
 <TextView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
+    android:textSize="22sp"
+    android:textStyle="bold"
     android:gravity="center"
-    android:text="Add Match"/>
+    android:textColor="#ffffff"
+    android:text="Lista de convocados"/>
+
+    </FrameLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="3dp">
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@color/backgroundRecyclerMailbox"
+        android:id="@+id/recycler_view_convocatoria">
+
+    </android.support.v7.widget.RecyclerView>
+    </android.support.v7.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/backgroundRecyclerMailbox" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:textSize="16sp"
+        android:textColor="#232323"
+        android:textStyle="bold"
+        android:text="$200"/>
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="4dp"
+        android:textSize="14sp"
+        android:text="x jugador"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:id="@+id/boton_texto_enviar"
+            android:textColor="#393939"
+            android:layout_marginRight="12dp"
+            android:clickable="true"
+            android:text="Enviar"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:elegantTextHeight="true"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:id="@+id/boton_confirmar"
+            android:background="@drawable/boton_add"
+            android:textColor="#ffffff"
+            android:elevation="@dimen/cardview_default_elevation"
+            android:clickable="true"
+            android:textAllCaps="false"
+            android:translationZ="2dp"
+            android:layout_margin="5dp"
+            android:stateListAnimator="@null"
+            android:text="Confirmar"/>
+    </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>

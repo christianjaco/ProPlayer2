@@ -1,13 +1,258 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
+        android:weightSum="3"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinner_dia_friendly"
+            android:background="@drawable/custom_spinner_background"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:spinnerMode="dialog"
+            android:layout_weight="1"
+            android:popupBackground="@color/backgroundRecyclerMailbox" />
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinner_hora_friendly"
+            android:background="@drawable/custom_spinner_background"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:spinnerMode="dialog"
+            android:layout_weight="1"
+            android:popupBackground="@color/backgroundRecyclerMailbox" />
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinner_zona_friendly"
+            android:background="@drawable/custom_spinner_background"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:spinnerMode="dialog"
+            android:layout_weight="1"
+            android:popupBackground="@color/backgroundRecyclerMailbox" />
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/backgroundRecyclerMailbox" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        app:cardCornerRadius="10dp"
+        android:padding="20dp"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Propuesta de Amistoso"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:paddingTop="10sp"
+        android:textStyle="bold"
+        android:textColor="#313131"
+        android:textScaleX="1.1"
+        android:paddingBottom="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/escudo_local_friendly"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:elevation="2sp"
+                    android:translationZ="2sp"
+                    />
+
+                <TextView
+                    android:id="@+id/nombre_equipo_local"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"/>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="23dp"
+                android:layout_height="8dp"
+                android:text="-"
+                android:layout_gravity="center"
+                android:background="@drawable/borders_textview"
+                android:layout_marginBottom="5dp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                android:paddingTop="10dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/escudo_visitante_friendly"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:elevation="2sp"
+                    android:translationZ="2sp"
+                    android:clickable="true"
+                    />
+
+                <TextView
+                    android:id="@+id/nombre_equipo_visitante"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5sp"
+        android:weightSum="3">
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinner_cantidad_jugadores"
+            android:background="@drawable/custom_spinner_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:spinnerMode="dialog"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="2"
+            android:popupBackground="@color/backgroundRecyclerMailbox" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:textColor="#232323"
+                android:id="@+id/texto_precio_condicional"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:textSize="14sp"
+                android:text="x jugador"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:gravity="center"
-        android:text="Add Friendly"/>
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/stadium_png_vector"
+                android:id="@+id/estadio_friendly"
+                />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:text="La Terraza, Av. Cabildo 3432"/>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elegantTextHeight="true"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingRight="8sp"
+        android:paddingLeft="8sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginLeft="10sp"
+        android:id="@+id/boton_proponer_amistoso"
+        android:background="@drawable/boton_add"
+        android:textColor="#ffffff"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:clickable="true"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:translationZ="2dp"
+        android:stateListAnimator="@null"
+        android:text="Proponer"/>
 
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.cinnamon.proplayer.Fragments;
 
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -35,6 +36,7 @@ public class HomeFragment extends Fragment {
     private TabLayout tabLayout;
     private AppBarLayout appBarLayout;
     private ViewPager viewPager;
+    private ImageView cupPng;
 
 
     @Nullable
@@ -46,6 +48,8 @@ public class HomeFragment extends Fragment {
         tabLayout = (TabLayout) view.findViewById(R.id.tablayout_home);
         appBarLayout = (AppBarLayout)view.findViewById(R.id.appbar_id);
         viewPager = (ViewPager)view.findViewById(R.id.home_view_pager);
+        cupPng = (ImageView)view.findViewById(R.id.cup_png);
+        cupPng.setColorFilter(Color.WHITE);
 
        /* final android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) view.findViewById(R.id.toolbar);
         AppCompatActivity activity = (AppCompatActivity) getActivity();

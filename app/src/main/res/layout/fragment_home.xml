@@ -8,7 +8,6 @@
     android:fitsSystemWindows="true">
 
 
-
 <android.support.design.widget.AppBarLayout
      android:layout_width="match_parent"
      android:layout_height="256dp"
@@ -55,17 +54,20 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:paddingLeft="20sp"
+                    android:paddingTop="10sp"
                     android:backgroundTint="@color/colorPrimary"
                     android:src="@drawable/stadium_png_vector" />
 
-                <TextView
+           <!--     <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
                     android:text="La Terraza"
+                    android:paddingTop="5dp"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="13sp" />
+                    android:textSize="13sp" />-->
 
             </LinearLayout>
 
@@ -111,7 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="6dp"
+                android:paddingTop="10sp"
                 android:layout_gravity="right">
 
                 <ImageView
@@ -137,25 +139,31 @@
                 android:layout_gravity="center"
                 android:gravity="bottom">
 
-
-                <TextView
+                <FrameLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1°"
-                    android:textSize="30sp"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"
-                    android:paddingLeft="6dp"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="center">
 
-                <TextView
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/trophy"
+                        android:id="@+id/cup_png"
+                        />
+
+
+                </FrameLayout>
+
+         <!--       <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Copa Oro"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp"/>-->
             </LinearLayout>
+
             </LinearLayout>
 
     </LinearLayout>
@@ -189,7 +197,6 @@
     </android.support.design.widget.CollapsingToolbarLayout>
 
 </android.support.design.widget.AppBarLayout>
-
 
 
 

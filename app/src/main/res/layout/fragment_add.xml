@@ -18,6 +18,10 @@
         app:tabIndicatorHeight="3dp"
         app:tabSelectedTextColor="@color/bottomNavIcon"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/shadow_search"/>
 
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"

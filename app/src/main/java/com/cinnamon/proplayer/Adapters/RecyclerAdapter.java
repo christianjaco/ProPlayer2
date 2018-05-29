@@ -5,6 +5,8 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -28,6 +30,8 @@ import com.cinnamon.proplayer.Objects.Team;
 import com.cinnamon.proplayer.R;
 
 import java.util.List;
+import java.util.Timer;
+
 /*
 Recycler que actua como madre del resto solo en la parte del seteo de datos (Bind)
  */
@@ -113,6 +117,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         private ImageView dot_fixture;
         private FrameLayout pos_clasif;
 
+        private ImageView avatarConvocatoria;
+        private TextView nombreConvocatoria;
+
+
 
 
         public ViewHolder(View itemView) {
@@ -147,6 +155,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
             dot_fixture = (ImageView) itemView.findViewById(R.id.won_lost_image);
             pos_clasif = (FrameLayout) itemView.findViewById(R.id.frame_positions);
 
+            avatarConvocatoria = (ImageView) itemView.findViewById(R.id.image_convocatoria);
+            nombreConvocatoria = (TextView) itemView.findViewById(R.id.nombre_convocatoria);
+
+
             }
 
         //Seteo las noticias
@@ -154,6 +166,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
             titulo.setText(news.getTitulo());
             imagen.setImageResource(news.getFoto());
+
             }
 
         //Seteo a los jugadores
@@ -232,6 +245,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
             } else {
                 dot_fixture.setColorFilter(Color.rgb(230,230,0));
             }
+        }
+        public void bindConvocatoria(Player player){
+
+
+            nombreConvocatoria.setText(player.getName());
+            avatarConvocatoria.setImageResource(player.getAvatar());
+            avatarConvocatoria.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ColorMatrix matrix = new ColorMatrix();
+                    matrix.setSaturation(0);
+
+                    ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
+                    avatarConvocatoria.setColorFilter(filter);
+                }
+            });
         }
     }
 }

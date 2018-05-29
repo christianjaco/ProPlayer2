@@ -35,7 +35,7 @@ public class FixtureFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_fixture,container,false);
 
 
-        matches= new ArrayList<>();
+        matches = new ArrayList<>();
         addMatch();
 
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view_fixture);

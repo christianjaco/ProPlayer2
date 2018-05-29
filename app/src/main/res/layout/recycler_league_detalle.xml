@@ -32,8 +32,8 @@
     </FrameLayout>
 
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:id="@+id/escudo_equipo"
         android:layout_margin="1dp"
         android:paddingLeft="2dp"
