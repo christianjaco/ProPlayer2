@@ -10,6 +10,7 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -23,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cinnamon.proplayer.Fragments.NewsItemFragment;
+import com.cinnamon.proplayer.Objects.League;
 import com.cinnamon.proplayer.Objects.Match;
 import com.cinnamon.proplayer.Objects.News;
 import com.cinnamon.proplayer.Objects.Player;
@@ -120,6 +122,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         private ImageView avatarConvocatoria;
         private TextView nombreConvocatoria;
 
+        private ImageView leagueLogo;
+        private TextView leagueName;
+
 
 
 
@@ -157,6 +162,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
             avatarConvocatoria = (ImageView) itemView.findViewById(R.id.image_convocatoria);
             nombreConvocatoria = (TextView) itemView.findViewById(R.id.nombre_convocatoria);
+
+            leagueLogo = (ImageView)itemView.findViewById(R.id.image_league_logo);
+            leagueName = (TextView) itemView.findViewById(R.id.txt_league_name);
 
 
             }
@@ -261,6 +269,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
                     avatarConvocatoria.setColorFilter(filter);
                 }
             });
+        }
+
+        public void bindLeague(League league){
+            leagueLogo.setImageResource(league.getLogo());
+            leagueName.setText(league.getName());
         }
     }
 }

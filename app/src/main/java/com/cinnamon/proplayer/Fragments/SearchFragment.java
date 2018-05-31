@@ -11,6 +11,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -22,8 +24,14 @@ import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.cinnamon.proplayer.Adapters.RecyclerAdapter;
+import com.cinnamon.proplayer.Adapters.RecyclerAdapterExploreLeagues;
 import com.cinnamon.proplayer.Adapters.ViewPagerAdapter;
+import com.cinnamon.proplayer.Objects.League;
 import com.cinnamon.proplayer.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchFragment extends Fragment {
 
@@ -34,6 +42,7 @@ public class SearchFragment extends Fragment {
     private ImageView framePlayers;
     private ImageView agregarVideo;
     private FloatingActionButton floatingActionButton;
+    private List<League> ligasList;
 
     @Nullable
     @Override
@@ -55,6 +64,8 @@ public class SearchFragment extends Fragment {
         tabLayout.setupWithViewPager(viewPager);
 
         -------------------------------------------------------------------------------------------*/
+
+
         agregarVideo = (ImageView)view.findViewById(R.id.agregar_video);
         framePlayers =(ImageView)view.findViewById(R.id.frame_jugador_convocatoria);
         floatingActionButton = (FloatingActionButton)view.findViewById(R.id.fab_add_video);
@@ -67,9 +78,22 @@ public class SearchFragment extends Fragment {
         agregarVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(),"Ver Video",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"Ver Videos",Toast.LENGTH_SHORT).show();
             }
         });
+
+        ligasList = new ArrayList<>();
+        AddLeagues();
+
+        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.body_recycle_copas);
+
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext().getApplicationContext());
+
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setAdapter(new RecyclerAdapterExploreLeagues(ligasList,getContext()));
+        recyclerView.setLayoutManager(layoutManager);
+
         return view;
     }
 
@@ -104,5 +128,15 @@ public class SearchFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
+    }
+
+    public void AddLeagues(){
+        ligasList.add(new League("Clasificación",R.drawable.escudo_gordos));
+        ligasList.add(new League("Copa Oro",R.drawable.escudo_gordos));
+        ligasList.add(new League("Copa Plata",R.drawable.escudo_gordos));
+        ligasList.add(new League("Copa Bronce",R.drawable.escudo_gordos));
+        ligasList.add(new League("Zona Belgrano",R.drawable.escudo_gordos));
+        ligasList.add(new League("Zona Palermo",R.drawable.escudo_gordos));
+        ligasList.add(new League("Zona Nuñez",R.drawable.escudo_gordos));
     }
 }
